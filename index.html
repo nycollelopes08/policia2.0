@@ -267,4 +267,111 @@
             document.getElementById(tabId).classList.add('active');
         });
     });
+</script><!-- Seção de Abas - Concursos, Simulados, Comentários, Feedbacks -->
+<section id="concursos-simulados" class="section">
+    <div class="container">
+        <h2>Inscrição em Concursos e Simulados</h2>
+        <div class="tabs">
+            <!-- Abas de navegação -->
+            <ul class="tab-titles">
+                <li class="tab-link active" data-tab="inscricao">Inscrição em Concursos</li>
+                <li class="tab-link" data-tab="simulados">Simulados</li>
+                <li class="tab-link" data-tab="comentarios">Comentários</li>
+                <li class="tab-link" data-tab="feedbacks">Feedbacks</li>
+            </ul>
+            
+            <!-- Conteúdo da aba Inscrição em Concursos -->
+            <div id="inscricao" class="tab-content active">
+                <h3>Inscreva-se para Concursos</h3>
+                <p>Aqui você pode se inscrever para os concursos policiais ou obter informações sobre concursos abertos.</p>
+                <form id="inscricao-form">
+                    <label for="nome-inscricao">Nome Completo:</label>
+                    <input type="text" id="nome-inscricao" name="nome-inscricao" placeholder="Digite seu nome completo" required>
+                    
+                    <label for="email-inscricao">Email:</label>
+                    <input type="email" id="email-inscricao" name="email-inscricao" placeholder="Digite seu e-mail" required>
+                    
+                    <label for="concursos">Selecione o Concurso:</label>
+                    <select id="concursos" name="concursos" required>
+                        <option value="pm">Polícia Militar</option>
+                        <option value="pf">Polícia Federal</option>
+                        <option value="prf">Polícia Rodoviária Federal</option>
+                        <option value="civil">Polícia Civil</option>
+                    </select>
+
+                    <button type="submit">Inscrever-se</button>
+                </form>
+            </div>
+
+            <!-- Conteúdo da aba Simulados -->
+            <div id="simulados" class="tab-content">
+                <h3>Simulados de Concursos</h3>
+                <p>Prepare-se para os concursos policiais com simulados práticos. Aqui você pode acessar questões para praticar.</p>
+                <form id="simulados-form">
+                    <label for="tipo-simulado">Escolha o tipo de simulado:</label>
+                    <select id="tipo-simulado" name="tipo-simulado" required>
+                        <option value="pm">Simulado Polícia Militar</option>
+                        <option value="pf">Simulado Polícia Federal</option>
+                        <option value="prf">Simulado Polícia Rodoviária Federal</option>
+                        <option value="civil">Simulado Polícia Civil</option>
+                    </select>
+                    
+                    <button type="submit">Iniciar Simulado</button>
+                </form>
+                <div id="simulado-resultado">
+                    <!-- Aqui podem ser exibidos os resultados dos simulados -->
+                </div>
+            </div>
+
+            <!-- Conteúdo da aba Comentários -->
+            <div id="comentarios" class="tab-content">
+                <h3>Deixe suas dúvidas ou perguntas</h3>
+                <form id="comentarios-form">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                    <label for="comentario">Comentário:</label>
+                    <textarea id="comentario" name="comentario" placeholder="Digite sua dúvida ou comentário" required></textarea>
+                    <button type="submit">Enviar Comentário</button>
+                </form>
+                <div id="comentarios-list">
+                    <!-- Aqui os comentários serão exibidos (seriam adicionados via backend ou JS) -->
+                </div>
+            </div>
+
+            <!-- Conteúdo da aba Feedbacks -->
+            <div id="feedbacks" class="tab-content">
+                <h3>Deixe seu feedback sobre o site</h3>
+                <form id="feedback-form">
+                    <label for="nome-feedback">Nome:</label>
+                    <input type="text" id="nome-feedback" name="nome-feedback" placeholder="Digite seu nome" required>
+                    <label for="feedback">Feedback:</label>
+                    <textarea id="feedback" name="feedback" placeholder="Deixe seu feedback" required></textarea>
+                    <button type="submit">Enviar Feedback</button>
+                </form>
+                <div id="feedbacks-list">
+                    <!-- Aqui os feedbacks seriam exibidos -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SCRIPT para alternar as abas -->
+<script>
+    // Função para alternar as abas
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Remove a classe 'active' de todas as abas
+            tabLinks.forEach(link => link.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Adiciona a classe 'active' na aba clicada
+            link.classList.add('active');
+            const tabId = link.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
 </script>
