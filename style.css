@@ -163,4 +163,92 @@ a:hover {
     max-width: 400px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}/* Estilos para as abas */
+.tabs {
+    margin-top: 30px;
+}
+
+.tab-titles {
+    display: flex;
+    cursor: pointer;
+    padding: 0;
+    list-style: none;
+}
+
+.tab-titles li {
+    flex: 1;
+    text-align: center;
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin: 0 5px;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s ease;
+}
+
+.tab-titles li:hover {
+    background-color: #ddd;
+}
+
+.tab-titles li.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 0 0 5px 5px;
+    margin-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Estilos do Formulário */
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos dos Comentários/Feedbacks listados */
+#comentarios-list,
+#feedbacks-list {
+    margin-top: 20px;
+}
+
+#comentarios-list div,
+#feedbacks-list div {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
 }

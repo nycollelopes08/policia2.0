@@ -205,4 +205,66 @@
             </div>
         </div>
     </div>
+</section><!-- Seção de Abas -->
+<section id="comentarios-feedback" class="section">
+    <div class="container">
+        <h2>Comentários e Feedbacks</h2>
+        <div class="tabs">
+            <!-- Abas de navegação -->
+            <ul class="tab-titles">
+                <li class="tab-link active" data-tab="comentarios">Comentários</li>
+                <li class="tab-link" data-tab="feedbacks">Feedbacks</li>
+            </ul>
+            
+            <!-- Conteúdo da aba Comentários -->
+            <div id="comentarios" class="tab-content active">
+                <h3>Deixe suas dúvidas ou perguntas</h3>
+                <form id="comentarios-form">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                    <label for="comentario">Comentário:</label>
+                    <textarea id="comentario" name="comentario" placeholder="Digite sua dúvida ou comentário" required></textarea>
+                    <button type="submit">Enviar Comentário</button>
+                </form>
+                <div id="comentarios-list">
+                    <!-- Aqui os comentários serão exibidos (seriam adicionados via backend ou JS) -->
+                </div>
+            </div>
+
+            <!-- Conteúdo da aba Feedbacks -->
+            <div id="feedbacks" class="tab-content">
+                <h3>Deixe seu feedback sobre o site</h3>
+                <form id="feedback-form">
+                    <label for="nome-feedback">Nome:</label>
+                    <input type="text" id="nome-feedback" name="nome-feedback" placeholder="Digite seu nome" required>
+                    <label for="feedback">Feedback:</label>
+                    <textarea id="feedback" name="feedback" placeholder="Deixe seu feedback" required></textarea>
+                    <button type="submit">Enviar Feedback</button>
+                </form>
+                <div id="feedbacks-list">
+                    <!-- Aqui os feedbacks seriam exibidos -->
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
+<!-- SCRIPT para alternar as abas -->
+<script>
+    // Função para alternar as abas
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Remove a classe 'active' de todas as abas
+            tabLinks.forEach(link => link.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Adiciona a classe 'active' na aba clicada
+            link.classList.add('active');
+            const tabId = link.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+</script>
