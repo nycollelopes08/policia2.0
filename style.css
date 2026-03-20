@@ -228,7 +228,7 @@ form textarea {
 form button {
     padding: 10px 20px;
     background-color: #092f57;
-    color: white;
+    color: rgb(6, 51, 117);
     border: none;
     border-radius: 5px;
     cursor: pointer;
