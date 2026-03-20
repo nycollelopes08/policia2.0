@@ -190,7 +190,7 @@ a:hover {
 }
 
 .tab-titles li.active {
-    background-color: #007bff;
+    background-color: 8#0b3869;
     color: white;
 }
 
@@ -235,7 +235,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #0056b3;
+    background-color: #093b70;
 }
 
 /* Estilos dos Comentários/Feedbacks listados */
